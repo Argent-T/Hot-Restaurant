@@ -53,17 +53,16 @@ app.post("/api/tables", function (req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   var newResevration = req.body;
-  console.log(newResevration)
-  if (tables.length > 5) {
+  console.log(newResevration);
+  console.log(tables);
+  if (tables.length === 5) {
     waitlist.push(newResevration)
     console.log("added to waitlist")
   }
-
   else {
     tables.push(newResevration);
     console.log("added to tables")
-  };
-
+  }
 
   // Using a RegEx Pattern to remove spaces from newCharacter
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
