@@ -39,7 +39,7 @@
             <div class="card bg-light">
                 <div class="card-header">Table Reservation</div>
                 <div class="card-body">
-                    <form>
+                    <form id="reserveForm">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="name" class="form-control" id="name">
@@ -56,7 +56,7 @@
                             <label for="userId">Unique ID</label>
                             <input type="userId" class="form-control" id="userID">
                         </div>
-                        <button type="submit" class="btn btn-primary" id="add-btn">Submit</button>
+                        <button class="btn btn-primary" id="add-btn">Submit</button>
                     </form>
                 </div>
               </div>
@@ -82,7 +82,10 @@
             email: $("#email").val().trim(),
             id: $("#userID").val().trim()
           };
-          $.post("/api/tables", newResevration,function(anything){console.log(anything)});
+
+        console.log("First test");
+        document.getElementById('reserveForm').reset();
+        $.post("/api/tables", newResevration,function(anything){console.log(anything)});
         });
 
         function clearTable(){
