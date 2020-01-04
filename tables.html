@@ -80,6 +80,7 @@
             });
             $.get("/api/waitlist", function(data){
                 console.log(data);
+                console.log(data.length);
 
                 for (i=0; i < data.length; i++) {
                     $(".waitCard").append(`<div class="card-body">
