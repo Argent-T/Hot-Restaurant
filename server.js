@@ -38,6 +38,7 @@ app.get("/api/waitlist", function (req, res) {
 });
 app.get("/api/clear", function (req, res) {
   tables = [];
+  res.redirect("/tables");
 });
 
 
