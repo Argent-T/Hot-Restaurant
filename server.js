@@ -26,22 +26,16 @@ var waitlist = [{
     id: "11111"
 }];
 
-<<<<<<< HEAD
-app.get("/api/tables", function(req,res) {
-    return res.json(tables);
-});
-
-app.get("/api/waitlist", function(req,res) {
-    return res.json(waitlist);
-});
-=======
 // routing
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, "home.html"));
   });
   
-  app.get("/add", function(req, res) {
+  app.get("/tables", function(req, res) {
+    res.sendFile(path.join(__dirname, "tables.html"));
+  });
+  app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
   });
 
@@ -80,4 +74,3 @@ app.post("/api/tables", function(req, res) {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
->>>>>>> 16fef1ae75838578a4c8aca5dfd8ae7dca9d44f6
