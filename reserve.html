@@ -65,7 +65,7 @@
             <div class="container">
                 <span>Control Panel</span>
                 <p>
-                    <a href="#">Clear Table</a> | 
+                    <a id="clear" href="/api/clear">Clear Table</a> | 
                     <a href="/api/tables">API Table Link</a> | 
                     <a href="/api/waitlist">API Wait List</a>
                 </p>
@@ -87,6 +87,16 @@
         document.getElementById('reserveForm').reset();
         $.post("/api/tables", newResevration,function(anything){console.log(anything)});
         });
+
+        function clearTable(){
+            var currentURL = window.location.origin;
+            $.ajax({url: currentURL + "/api/clear", method: "POST"})
+
+        }
+        $("#clear").on('click',function(){
+            alert("Clearing...");
+            clearTable();
+        })
 
       </script>
 
